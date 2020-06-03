@@ -1,4 +1,5 @@
 const withSass = require("@zeit/next-sass");
+const withFonts = require('next-fonts');
 module.exports = withSass({
   // add custom webpack config
   webpack(config, options) {
@@ -17,6 +18,14 @@ module.exports = withSass({
         resources: globalSass,
       },
     });
+
+    config.module.rules.push({
+      test: /\.woff|woff2|eot|ttf$/,
+      loader: "url-loader",
+      options: {
+        esModule: false
+      }
+    })
 
     return config;
   },
