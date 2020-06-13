@@ -1,0 +1,6 @@
+// conversion de breakpoint px en em
+@function b-em($value-px) {
+  $value-em: $value-px / 16;
+
+  @return $value-em*1em;
+}

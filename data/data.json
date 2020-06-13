@@ -1,0 +1,16 @@
+{
+    "nav": [
+        {
+            "label": "Accueil",
+            "link": "/"
+        },
+        {
+            "label": "Blog",
+            "link": "/blog"
+        },
+        {
+            "label": "Boutique",
+            "link": "/boutique"
+        }
+    ]
+}

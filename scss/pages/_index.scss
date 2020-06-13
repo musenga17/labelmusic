@@ -1,0 +1,9 @@
+.home {
+    &__main {
+      height: 100vh;
+      background-image: url("../public/images/bg_header_desktop.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+    }
+}

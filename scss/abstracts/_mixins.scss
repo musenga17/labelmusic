@@ -1,0 +1,18 @@
+$breakpoints: (
+  'small':  767px,
+  'medium': 992px,
+  'large':  1200px
+) !default;
+
+@mixin bp($breakpoint) {
+    @if length($breakpoint) == 1 {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
+    @else if length($breakpoint) == 2 {
+      @media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+        @content;
+      }
+    }
+}

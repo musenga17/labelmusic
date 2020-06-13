@@ -1,0 +1,16 @@
+// Sizes
+$site-max-width: 1200px;
+
+// Breakpoint desktop extra-large
+$b-xlarge: b-em(1300);
+
+// Breakpoint desktop
+$b-desk: b-em(1000);
+
+// Breakpoint tablette
+$b-tab: b-em(767) b-em(999);
+
+// Breakpoint mobile
+$b-mob: b-em(0) b-em(767);
+
+$b-tab-desk: b-em(767);

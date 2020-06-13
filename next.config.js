@@ -1,11 +1,10 @@
 const withSass = require("@zeit/next-sass");
-const withFonts = require('next-fonts');
 module.exports = withSass({
   // add custom webpack config
   webpack(config, options) {
     // this rule is to add support for global scss variables, functions & mixins
     const globalSass = [
-      "./scss/abstracts/_variables.scss",
+      "./scss/abstracts/variables/*",
       "./scss/abstracts/_functions.scss",
       "./scss/abstracts/_mixins.scss",
     ];
@@ -20,7 +19,7 @@ module.exports = withSass({
     });
 
     config.module.rules.push({
-      test: /\.woff|woff2|eot|ttf$/,
+      test: /\.png|jpg|gif|svg|woff|woff2|eot|ttf$/,
       loader: "url-loader",
       options: {
         esModule: false

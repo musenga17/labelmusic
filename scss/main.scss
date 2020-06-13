@@ -1,7 +1,12 @@
 /* abstracts */
-@import "abstracts/variables";
+@import "abstracts/variables/colors.scss";
+@import "abstracts/variables/fonts.scss";
+@import "abstracts/variables/sizes.scss";
 @import "abstracts/functions";
 @import "abstracts/mixins";
+
+/* vendors */
+@import 'vendors/icomoon';
 
 /* base */
 @import "base/reset";
