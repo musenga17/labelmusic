@@ -1,0 +1,21 @@
+@for $i from 1 through 12 {
+  $size: ($i / 12 * 100%);
+  .col-mob-#{$i} {
+    @include bp($b-mob) {
+      flex: 0 0 $size;
+      max-width: $size;
+    }
+  }
+  .col-tab-#{$i} {
+    @include bp($b-tab) {
+      flex: 0 0 $size;
+      max-width: $size;
+    }
+  }
+  .col-desk-#{$i} {
+    @include bp($b-desk) {
+      flex: 0 0 $size;
+      max-width: $size;
+    }
+  }
+}

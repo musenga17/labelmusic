@@ -1,3 +1,33 @@
 .blog {
-  
+  .mainArticlesBlock {
+    height: 500px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    &__row {
+      height: 50%;
+      display: flex;
+    }
+
+    .otherMainArticles {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .articlesBlock {
+    &__articles {
+      max-width: 800px;
+      &__titleSection {
+        border-bottom: 1px solid black;
+        margin-bottom: 50px;
+      }
+
+      &__list {
+
+      }
+    }
+  }
 }

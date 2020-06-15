@@ -1,0 +1,19 @@
+.mainArticle {
+  position: relative;
+  height: 50%;
+  width: 50%;
+  background-color: rgb(122, 8, 175);
+  border: 2px solid red;
+  
+  &.frontpage {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__title {
+    padding: 10px 15px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+  }
+}

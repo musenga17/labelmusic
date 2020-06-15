@@ -1,9 +1,9 @@
 body {
-  background-color: rgba(255, 255, 255, 0.521);
+  background-color: white;
   font-family: $t-text;
 
   @include bp($b-desk) {
-    background-color: #ac9999;
+    background-color: white;
   }
 }
 
@@ -15,26 +15,4 @@ body {
 .icon {
   font-size: 30px;
   cursor: pointer;
-}
-
-@for $i from 1 through 12 {
-  $size: ($i / 12 * 100%);
-  .col-mob-#{$i} {
-    @include bp($b-mob) {
-      flex: 0 0 $size;
-      max-width: $size;
-    }
-  }
-  .col-tab-#{$i} {
-    @include bp($b-tab) {
-      flex: 0 0 $size;
-      max-width: $size;
-    }
-  }
-  .col-desk-#{$i} {
-    @include bp($b-desk) {
-      flex: 0 0 $size;
-      max-width: $size;
-    }
-  }
 }

@@ -1,0 +1,31 @@
+.article {
+  display: flex;
+  margin-bottom: 20px;
+  box-shadow: 0 0 18px 0 #e5e6ea;
+
+  &__img {
+    max-width: 240px;
+    min-height: 150px;
+  }
+
+  &__infos {
+    padding: 10px 15px;
+
+    &__category {
+      color: chocolate;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__description {
+      margin-bottom: 5px;
+    }
+
+    &__date {
+      font-size: 14px;
+      color: grey;
+    }
+  }
+}
