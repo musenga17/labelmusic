@@ -4,10 +4,32 @@
   width: 50%;
   background-color: rgb(122, 8, 175);
   border: 2px solid red;
+  cursor: pointer;
+  transition: all .5s ease-out;
+
+  &::before {
+    position: absolute;
+    box-shadow: 0px -100px 40px -40px rgba(0, 0, 0, 0.7) inset;
+    content: "";
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+  }
   
   &.frontpage {
     height: 100%;
     width: 100%;
+  }
+
+  @for $i from 0 through 4 {
+    &.article#{$i} {
+      background-image: url("../../public/images/article#{$i}.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
   }
 
   &__title {
@@ -15,5 +37,6 @@
     color: white;
     position: absolute;
     bottom: 0;
+    z-index: 3;
   }
 }

@@ -18,6 +18,9 @@
   }
 
   .articlesBlock {
+    display: flex;
+    justify-content: space-between;
+    
     &__articles {
       max-width: 800px;
       &__titleSection {
@@ -28,6 +31,10 @@
       &__list {
 
       }
+    }
+
+    &__boxes {
+      
     }
   }
 }

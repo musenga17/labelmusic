@@ -1,0 +1,31 @@
+.button {
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 15px 35px;
+  background-color: darkcyan;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all .5s ease-out;
+
+  &.button-small {
+    padding: 10px 30px;
+    font-size: 12px;
+  }
+
+  &.button-medium {
+    padding: 15px 35px;
+    font-size: 14px;
+  }
+
+  &.button-large {
+    padding: 20px 50px;
+    font-size: 16px;
+  }
+}

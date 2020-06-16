@@ -2,19 +2,41 @@ import React from 'react';
 import Navbar from '../components/navbars/Navbar';
 import MainArticle from '../components/articles/MainArticle';
 import Article from '../components/articles/Article';
+import Box from '../components/boxes/Box';
+import BoxArticle from '../components/articles/BoxArticle';
+import Button from '../components/buttons/Button';
+import cn from "classnames";
 
 function Blog(props) {
   const displayOtherMainArticles = () => {
     let list = [];
     for (let index = 0; index < 4; index++) {
       const mainArticle = (
-        <MainArticle index={index + 1} />
+        <MainArticle key={index} index={index + 1} />
       );
       list.push(mainArticle);
     }
 
     return list;
   };
+
+  const displayBoxArticles = () => {
+    let list = [];
+    for (let index = 0; index < 20; index++) {
+      const boxArticle = (
+        <BoxArticle key={index} none={(index > 4)} />
+      );
+      list.push(boxArticle);
+    }
+
+    return list;
+  }
+
+  const displayNextBoxArticles = () => {
+    document.querySelectorAll(`.boxArticle`).forEach((elem) => {
+      elem.classList.remove("none");
+    });
+  }
 
   return (
     <div className="blog">
@@ -39,7 +61,12 @@ function Blog(props) {
               <Article />
             </div>
           </div>
-          
+          <div className="articlesBlock__boxes">
+            <Box>
+              {displayBoxArticles()}
+              <Button size="medium" onClick={displayNextBoxArticles}>Afficher la suite</Button>
+            </Box>
+          </div>
         </section>
       </div>
     </div>
