@@ -16,3 +16,16 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+
+  &__content {
+    max-width: 800px;
+  }
+
+  &__boxes {
+  }
+}

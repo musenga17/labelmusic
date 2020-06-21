@@ -4,7 +4,6 @@
     background-color: black;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
 
     &__row {
       height: 50%;
@@ -17,24 +16,23 @@
     }
   }
 
-  .articlesBlock {
-    display: flex;
-    justify-content: space-between;
-    
-    &__articles {
-      max-width: 800px;
-      &__titleSection {
-        border-bottom: 1px solid black;
-        margin-bottom: 50px;
+  .block {
+    &__content {
+      .articles {
+        &__titleSection {
+          border-bottom: 1px solid black;
+          margin-bottom: 50px;
+        }
+  
+        &__list {
+          margin-bottom: 60px;
+        }
+  
+        .moreArticles {
+          display: table;
+          margin-left: auto;
+        }
       }
-
-      &__list {
-
-      }
-    }
-
-    &__boxes {
-      
     }
   }
 }

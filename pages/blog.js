@@ -50,18 +50,21 @@ function Blog(props) {
             {displayOtherMainArticles()}
           </div>
         </div>
-        <section className="articlesBlock">
-          <div className="articlesBlock__articles">
-            <h4 className="articlesBlock__articles__titleSection">Récents</h4>
-            <div className="articles__list">
-              <Article />
-              <Article />
-              <Article />
-              <Article />
-              <Article />
+        <section className="block">
+          <div className="block__content">
+            <div className="articles">
+              <h4 className="articles__titleSection">Récents</h4>
+              <div className="articles__list">
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+              </div>
+              <Button size="medium" additionalClass="moreArticles" >Plus d'articles</Button>
             </div>
           </div>
-          <div className="articlesBlock__boxes">
+          <div className="block__boxes">
             <Box>
               {displayBoxArticles()}
               <Button size="medium" onClick={displayNextBoxArticles}>Afficher la suite</Button>

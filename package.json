@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
     "@mdi/font": "^5.3.45",
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",

@@ -17,9 +17,10 @@ const Navbar = (props) => {
           ))}
         </div>
         <div className="navbar__container__tools">
-          <span className="icon icon-search"></span>
+          <i class="lni lni-search-alt"></i>
           <span className="icon icon-cart"></span>
           <span className="icon icon-menu"></span>
+          <i class="lni lni-instagram"></i>
         </div>
       </div>
     </div>

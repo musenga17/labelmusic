@@ -4,8 +4,8 @@
   text-transform: uppercase;
   font-weight: bold;
   padding: 15px 35px;
-  background-color: darkcyan;
-  color: black;
+  background-color: $c-color7;
+  color: white;
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -13,6 +13,10 @@
   outline: none;
   cursor: pointer;
   transition: all .5s ease-out;
+
+  &:hover {
+    background-color: $c-color6;
+  }
 
   &.button-small {
     padding: 10px 30px;
