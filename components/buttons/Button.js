@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import "./Button.scss";
 import cn from "classnames";
+import Link from 'next/link';
 
 const Button = (props) => {
   const properties = {
@@ -10,7 +11,15 @@ const Button = (props) => {
   };
 
   return (
-    <a className={cn("button", properties, props.additionalClass)} onClick={props.onClick}>{props.children}</a>
+    <Fragment>
+      {props.href ?
+        <Link href={props.href}>
+          <a className={cn("button", properties, props.additionalClass)} onClick={props.onClick}>{props.children}</a>
+        </Link>
+        :
+        <a className={cn("button", properties, props.additionalClass)} onClick={props.onClick}>{props.children}</a>
+      }
+    </Fragment>
   );
 };
 

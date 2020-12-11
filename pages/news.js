@@ -1,30 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbars/Navbar';
 import Article from '../components/articles/Article';
 import Box from '../components/boxes/Box';
-import BoxArticle from '../components/articles/BoxArticle';
-import Button from '../components/buttons/Button';
 import Pagination from '../components/paginations/Pagination';
+import queryString from "query-string";
 
 function News(props) {
 
-  const displayBoxArticles = () => {
-    let list = [];
-    for (let index = 0; index < 20; index++) {
-      const boxArticle = (
-        <BoxArticle key={index} none={(index > 4)} />
-      );
-      list.push(boxArticle);
-    }
+  const [page, setPage] = useState(2);
 
-    return list;
-  }
-
-  const displayNextBoxArticles = () => {
-    document.querySelectorAll(`.boxArticle`).forEach((elem) => {
-      elem.classList.remove("none");
-    });
-  }
+  useEffect(() => {
+    setPage(parseInt(queryString.parse(location.search)["page"]));
+  });
 
   return (
     <div className="news">
@@ -41,18 +28,19 @@ function News(props) {
               <Article />
               <Article />
             </div>
+            <Pagination currentPage={page} lastPage={80} />
           </div>
           <div className="block__boxes">
-            <Box>
-              {displayBoxArticles()}
-              <Button size="medium" onClick={displayNextBoxArticles}>Afficher la suite</Button>
-            </Box>
+            <Box />
           </div>
         </div>
-        <Pagination />
       </div>
     </div>
   );
 }
+
+/* News.getInitialProps = async ({ query: { page } }) => {
+  return { aboutId: page }
+} */
 
 export default News;

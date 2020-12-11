@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/navbars/Navbar';
 import MainArticle from '../components/articles/MainArticle';
 import Article from '../components/articles/Article';
@@ -19,24 +19,6 @@ function Blog(props) {
 
     return list;
   };
-
-  const displayBoxArticles = () => {
-    let list = [];
-    for (let index = 0; index < 20; index++) {
-      const boxArticle = (
-        <BoxArticle key={index} none={(index > 4)} />
-      );
-      list.push(boxArticle);
-    }
-
-    return list;
-  }
-
-  const displayNextBoxArticles = () => {
-    document.querySelectorAll(`.boxArticle`).forEach((elem) => {
-      elem.classList.remove("none");
-    });
-  }
 
   return (
     <div className="blog">
@@ -61,14 +43,11 @@ function Blog(props) {
                 <Article />
                 <Article />
               </div>
-              <Button size="medium" additionalClass="moreArticles" >Plus d'articles</Button>
+              <Button size="medium" additionalClass="moreArticles" href="/news?page=2">Plus d'articles</Button>
             </div>
           </div>
           <div className="block__boxes">
-            <Box>
-              {displayBoxArticles()}
-              <Button size="medium" onClick={displayNextBoxArticles}>Afficher la suite</Button>
-            </Box>
+            <Box />
           </div>
         </section>
       </div>

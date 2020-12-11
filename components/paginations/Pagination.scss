@@ -1,3 +1,28 @@
 .pagination {
   display: flex;
+  justify-content: end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+
+  > * {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+  }
+
+  &__page {
+    &.active {
+      color: $c-color6;
+    }
+  }
+
+  &__dots {
+    align-self: flex-end;
+  }
 }
