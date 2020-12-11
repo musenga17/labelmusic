@@ -6,6 +6,18 @@ import Link from 'next/link';
 
 const Pagination = (props) => {
 
+  const previousButton = () => {
+    return (
+      <Button size="small" href={`/news?page=${props.currentPage - 1}`}><span className="icon-arrow-left2"></span></Button>
+    );
+  }
+
+  const nextButton = () => {
+    return (
+      <Button size="small" href={`/news?page=${props.currentPage + 1}`}><span className="icon-arrow-right2"></span></Button>
+    );
+  }
+
   const displayPagination = () => {
     console.log("CP : ", props.currentPage);
     if (props.currentPage == 1) {
@@ -18,11 +30,11 @@ const Pagination = (props) => {
         return display1();
       }
     }
-    else if (props.currentPage >= 2 && props.currentPage < 4) {
+    else if (props.currentPage >= 2 && props.currentPage < 5) {
       console.log("d2")
       return display2();
     }
-    else if (props.currentPage >= 4 && props.currentPage < props.lastPage - 2) {
+    else if (props.currentPage >= 5 && props.currentPage < props.lastPage - 2) {
       console.log("d3")
       return display3();
     }
@@ -64,15 +76,15 @@ const Pagination = (props) => {
         <a className="pagination__page">{props.lastPage}</a>
       </Link>
     );
-    list.push(<Button size="small"><span className="icon-arrow-right2"></span></Button>);
+    list.push(nextButton());
 
     return list;
   }
 
   const display2 = () => {
     let list = [];
-    list.push(<Button size="small"><span className="icon-arrow-left2"></span></Button>);
-    for (let index = 1; index <= 4; index++) {
+    list.push(previousButton());
+    for (let index = 1; index <= 6; index++) {
       list.push(
         <Link href={`/news?page=${index}`}>
           <a className={cn("pagination__page", { "active": (index == props.currentPage) })}>{index}</a>
@@ -85,21 +97,21 @@ const Pagination = (props) => {
         <a className="pagination__page">{props.lastPage}</a>
       </Link>
     );
-    list.push(<Button size="small"><span className="icon-arrow-right2"></span></Button>);
+    list.push(nextButton());
 
     return list;
   }
 
   const display3 = () => {
     let list = [];
-    list.push(<Button size="small"><span className="icon-arrow-left2"></span></Button>);
+    list.push(previousButton());
     list.push(
       <Link href={`/news?page=${1}`}>
         <a className="pagination__page">1</a>
       </Link>
     );
     list.push(<i class="lni lni-line-dotted pagination__dots"></i>);
-    for (let index = props.currentPage - 1; index <= props.currentPage + 1; index++) {
+    for (let index = props.currentPage - 2; index <= props.currentPage + 2; index++) {
       list.push(
         <Link href={`/news?page=${index}`}>
           <a className={cn("pagination__page", { "active": (index == props.currentPage) })}>{index}</a>
@@ -112,14 +124,14 @@ const Pagination = (props) => {
         <a className="pagination__page">{props.lastPage}</a>
       </Link>
     );
-    list.push(<Button size="small"><span className="icon-arrow-right2"></span></Button>);
+    list.push(nextButton());
 
     return list;
   }
 
   const display4 = () => {
     let list = [];
-    list.push(<Button size="small"><span className="icon-arrow-left2"></span></Button>);
+    list.push(previousButton());
     list.push(
       <Link href={`/news?page=${1}`}>
         <a className="pagination__page">1</a>
@@ -133,14 +145,14 @@ const Pagination = (props) => {
         </Link>
       );
     }
-    list.push(<Button size="small"><span className="icon-arrow-right2"></span></Button>);
+    list.push(nextButton());
 
     return list;
   }
 
   const display5 = () => {
     let list = [];
-    list.push(<Button size="small"><span className="icon-arrow-left2"></span></Button>);
+    list.push(previousButton());
     list.push(
       <Link href={`/news?page=${1}`}>
         <a className="pagination__page">1</a>

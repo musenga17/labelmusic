@@ -28,7 +28,7 @@ function News(props) {
               <Article />
               <Article />
             </div>
-            <Pagination currentPage={page} lastPage={80} />
+            <Pagination currentPage={page} lastPage={800} />
           </div>
           <div className="block__boxes">
             <Box />
